@@ -56,4 +56,3 @@ def net():
             neurodic[elem[0][1]] = elem[0][2]
         form.upload.data.save(filename)
     return render_template('net.html',form=form,image_name=filename,neurodic=neurodic)
-bootstrap = Bootstrap(app)

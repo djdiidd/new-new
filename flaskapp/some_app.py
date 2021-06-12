@@ -28,8 +28,8 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 SECRET_KEY = 'secret'
 app.config['SECRET_KEY'] = SECRET_KEY
 app.config['RECAPTCHA_USE_SSL'] = False
-app.config['RECAPTCHA_PUBLIC_KEY'] = 'сюда поместить ключ из google'
-app.config['RECAPTCHA_PRIVATE_KEY'] = 'сюда поместить секретный ключ из google'
+app.config['RECAPTCHA_PUBLIC_KEY'] = '6LenXSsbAAAAABPqpQZ3RpkDt42hxynW7j7SZxpm'
+app.config['RECAPTCHA_PRIVATE_KEY'] = '6LenXSsbAAAAALFvL7os3RcyzKnYADCcTW37GBPH'
 app.config['RECAPTCHA_OPTIONS'] = {'theme': 'white'}
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)

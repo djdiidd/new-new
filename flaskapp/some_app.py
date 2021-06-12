@@ -56,3 +56,29 @@ def net():
             neurodic[elem[0][1]] = elem[0][2]
         form.upload.data.save(filename)
     return render_template('net.html',form=form,image_name=filename,neurodic=neurodic)
+
+
+from flask import request
+from flask import Response
+import base64
+from PIL import Image
+from io import BytesIO
+import json
+@app.route("/apinet",methods=['GET', 'POST'])
+def apinet():
+    neurodic = {}
+    if request.mimetype == 'application/json': 
+        data = request.get_json()
+        filebytes = data['imagebin'].encode('utf-8')
+        cfile = base64.b64decode(filebytes)
+        img = Image.open(BytesIO(cfile))
+        decode = neuronet.getresult([img])
+        neurodic = {}
+        for elem in decode:
+            neurodic[elem[0][1]] = str(elem[0][2])
+            print(elem)
+
+    ret = json.dumps(neurodic)
+    resp = Response(response=ret, status=200,
+                    mimetype="application/json")
+    return resp 

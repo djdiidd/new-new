@@ -21,7 +21,6 @@ def data_to():
             some_value = some_value,some_pars=some_pars) 
 
 # new
-bootstrap = Bootstrap(app)
 from flask_wtf import FlaskForm,RecaptchaField
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
@@ -57,3 +56,4 @@ def net():
             neurodic[elem[0][1]] = elem[0][2]
         form.upload.data.save(filename)
     return render_template('net.html',form=form,image_name=filename,neurodic=neurodic)
+bootstrap = Bootstrap(app)

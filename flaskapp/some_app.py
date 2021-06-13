@@ -1,7 +1,6 @@
 print("Hello world")
 from flask import Flask
 app = Flask(__name__)
-#декоратор для вывода страницы по умолчанию
 @app.route("/")
 def hello():
     return " <html><head></head> <body> Hello World! </body></html>"
@@ -9,7 +8,6 @@ if __name__ == "__main__":
     app.run(host='127.0.0.1',port=5000)
 
 from flask import render_template
-#наша новая функция сайта
 @app.route("/data_to")
 def data_to():
     #создаем переменные с данными для передачи в шаблон
@@ -20,7 +18,7 @@ def data_to():
     return render_template('simple.html',some_str = some_str,
             some_value = some_value,some_pars=some_pars) 
 
-# new
+
 from flask_wtf import FlaskForm,RecaptchaField
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
@@ -35,11 +33,11 @@ from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
 class NetForm(FlaskForm):
     openid = StringField('openid', validators = [DataRequired()])
-    upload = FileField('Load image', validators=[
-             FileRequired(),
-             FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
+    upload = FileField('Load image', validators=
+                       [FileRequired(), FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
     recaptcha = RecaptchaField()
     submit = SubmitField('send')
+    
 from werkzeug.utils import secure_filename
 import os
 import net as neuronet
@@ -77,7 +75,6 @@ def apinet():
         for elem in decode:
             neurodic[elem[0][1]] = str(elem[0][2])
             print(elem)
-
     ret = json.dumps(neurodic)
     resp = Response(response=ret, status=200,
                     mimetype="application/json")
@@ -89,6 +86,7 @@ import lxml.etree as ET
 def apixml():
     dom = ET.parse("./static/xml/file.xml")
     xslt = ET.parse("./static/xml/file.xslt")
+    transform = ET.XSLT(xslt)
     newhtml = transform(dom)
     strfile = ET.tostring(newhtml)
     return strfile 

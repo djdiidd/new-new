@@ -7,7 +7,7 @@ import os
 from io import BytesIO 
 import base64
 img_data = None
-path = os.path.join('./static','image0008.png')
+path = os.path.join('./static','picture.jpg')
 with open(path, 'rb') as fh:
     img_data = fh.read()
     b64 = base64.b64encode(img_data)
@@ -18,10 +18,10 @@ if res.ok:
 
 try:
     r = requests.get('http://localhost:5000/apixml')
-    print(r.status_code)
+    print(r.status_code) 
     if(r.status_code!=200):
         exit(1)
     print(r.text)
-except:
-    exit(1)
+except: 
+    exit(1) 
     

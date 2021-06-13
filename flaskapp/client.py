@@ -26,5 +26,5 @@ try:
         exit(1)
     print(r.text)
 except:
-    exit(1)
+    exit(2)
     

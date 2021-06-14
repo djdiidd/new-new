@@ -42,11 +42,10 @@ def data_to():
     return render_template('simple.html', some_str=some_str,
                            some_value=some_value, some_pars=some_pars)
  
- 
-# модули работы с формами и полями в формах
- 
-# модули валидации полей формы
- 
+@app.route("/gay")
+def pic():
+    img = Image.open(r'./static/picture.png')
+    return img.show()
  
 # используем csrf токен, можете генерировать его сами
 SECRET_KEY = 'secret'

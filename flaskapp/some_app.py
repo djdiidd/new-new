@@ -16,9 +16,8 @@ import json
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
- 
-# import lxml.etree as ET
- 
+
+# Импортируем app в wsgi файл, который возможно будет запущен самым первым 
 app = Flask(__name__)
  
  

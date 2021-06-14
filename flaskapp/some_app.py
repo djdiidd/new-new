@@ -42,10 +42,6 @@ def data_to():
     return render_template('simple.html', some_str=some_str,
                            some_value=some_value, some_pars=some_pars)
  
-@app.route("/gay")
-def pic():
-    return <img src="new-new/flaskapp/static/picture.png">
- 
 # используем csrf токен, можете генерировать его сами
 SECRET_KEY = 'secret'
 app.config['SECRET_KEY'] = SECRET_KEY

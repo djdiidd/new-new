@@ -25,7 +25,7 @@ app = Flask(__name__)
 # декоратор для вывода страницы по умолчанию
 @app.route("/")
 def hello():
-    return " <html><head></head> <body> Hello World! </body><h1>СОСИ ГЕЙ</h1></html>"
+    return " <html><head></head> <body> Hello World! </body></html>"
  
  
 if __name__ == "__main__":

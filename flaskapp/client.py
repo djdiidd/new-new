@@ -1,7 +1,7 @@
 import requests
 r = requests.get('http://localhost:5000/')
-print(r.status_code) 
-print(r.text) 
+# print(r.status_code) 
+# print(r.text) 
 
 import os
 from io import BytesIO 

@@ -97,7 +97,7 @@ def twist_image(file_name, choice):
     ax.imshow(im, cmap='plasma')
     b = ax.pcolormesh(data, edgecolors='black', cmap='plasma')
     fig.colorbar(b, ax=ax)
-    gr_path = "./static/newgr.png"
+    gr_path = "./static/picture.png"
     sns.displot(data)
     #plt.show()
     plt.savefig(gr_path)

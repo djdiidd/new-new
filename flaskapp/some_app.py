@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
  
-# import lxml.etree as ET
+import lxml.etree as ET
  
 app = Flask(__name__)
  

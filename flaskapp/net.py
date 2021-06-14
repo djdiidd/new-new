@@ -1,8 +1,8 @@
 
 import random
 import keras
-from keras.layers import Input from keras.models
-import Model
+from keras.layers import Input 
+from keras.models import Model
 from keras.applications import MobileNetV2
 from keras.applications.mobilenet_v2 import preprocess_input, decode_predictions
 import os

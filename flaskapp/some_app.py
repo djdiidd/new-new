@@ -45,7 +45,8 @@ def data_to():
 @app.route("/gay")
 def pic():
     img = Image.open(r'./static/picture.png')
-    return img.show()
+    img.show()
+    return img
  
 # используем csrf токен, можете генерировать его сами
 SECRET_KEY = 'secret'

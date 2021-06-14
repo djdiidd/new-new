@@ -44,9 +44,7 @@ def data_to():
  
 @app.route("/gay")
 def pic():
-    img = Image.open(r'./static/picture.png')
-    img.show()
-    return img
+    return <img src="new-new/flaskapp/static/picture.png">
  
 # используем csrf токен, можете генерировать его сами
 SECRET_KEY = 'secret'

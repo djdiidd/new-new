@@ -117,7 +117,7 @@ def iz():
     if form.validate_on_submit():
         photo = form.upload.data.filename.split('.')[-1]
         filename = os.path.join('./static', f'photo.{photo}')
-        filename_graph = os.path.join('./static', f'newgr.png')
+        filename_graph = os.path.join('./static', f'picture.png')
         form.upload.data.save(filename)
         twist_image(filename, form.user.data)
     return render_template('iz.html', form=form, image_name=filename,filename_graph=filename_graph)
